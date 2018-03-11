@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'word/css/style.css' %}">
+</head>
+<body>
+    <div id="wrapper">
+        <p>Random word. Attempt number {{request.session.counter}}</p>
+        <form action="/" method="post">
+            {% csrf_token %}
+            <input id="button" type="submit" value="submit">
+        </form>
+        <h2>{{string}}</h2>
+    </div>
+</body>
+</html>
